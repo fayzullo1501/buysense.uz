@@ -1,0 +1,313 @@
+
+<!-- icon list--><!DOCTYPE html>
+<html class="wide wow-animation" lang="en">
+  <head>
+    <!-- Site Title-->
+    <title>Калькулятор - BUYURUB</title>
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <!-- Stylesheets-->
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lato:400,700,400italic%7CPoppins:300,400,500,700">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>.ie-panel{display: none;background: #212121;padding: 10px 0;box-shadow: 3px 3px 5px 0 rgba(0,0,0,.3);clear: both;text-align:center;position: relative;z-index: 1;} html.ie-10 .ie-panel, html.lt-ie-10 .ie-panel {display: block;}</style>
+  </head>
+  <body>
+    <div class="ie-panel"><a href="http://windows.microsoft.com/en-US/internet-explorer/"><img src="images/ie8-panel/warning_bar_0000_us.jpg" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today."></a></div>
+    
+      <!-- Page Header-->
+      <header class="page-header" style="padding-bottom: 24px">
+        <!-- RD Navbar-->
+        <div class="rd-navbar-wrap">
+          <nav class="rd-navbar rd-navbar-default-with-top-panel" data-layout="rd-navbar-fixed" data-sm-layout="rd-navbar-fixed" data-md-layout="rd-navbar-fullwidth" data-md-device-layout="rd-navbar-fixed" data-lg-layout="rd-navbar-fullwidth" data-lg-device-layout="rd-navbar-fullwidth" data-md-stick-up-offset="90px" data-lg-stick-up-offset="150px" data-stick-up="true" data-sm-stick-up="true" data-md-stick-up="true" data-lg-stick-up="true">
+            <div class="rd-navbar-top-panel rd-navbar-collapse">
+              <div class="rd-navbar-top-panel-inner">
+                <div class="left-side">
+                  <div class="group">
+                    <ul class="list-inline">
+                      <li><a class="icon icon-sm icon-secondary-5 fa fa-instagram" href="#"></a></li>
+                      <li><a class="icon icon-sm icon-secondary-5 fa fa-facebook" href="#"></a></li>
+                      <li><a class="icon icon-sm icon-secondary-5 fa fa-twitter" href="#"></a></li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="center-side">
+                  <!-- RD Navbar Brand-->
+                  <div class="rd-navbar-brand fullwidth-brand"><a class="brand-name" href="index.html"><img src="images/logo.png" alt="" width="314" height="48"/></a></div>
+                </div>
+                <div class="right-side">
+                  <!-- Contact Info-->
+                  <div class="contact-info">
+                    <div class="unit unit-middle unit-horizontal unit-spacing-xs">
+                      <div class="unit__left"><span class="icon icon-primary text-middle mdi mdi-phone"></span></div>
+                      <div class="unit__body"><a class="text-middle" href="tel:#">
+                        +998 (90) 046-30-70
+                        </a></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="rd-navbar-inner">
+              <!-- RD Navbar Panel-->
+              <div class="rd-navbar-panel">
+                <!-- RD Navbar Toggle-->
+                <button class="rd-navbar-toggle" data-rd-navbar-toggle=".rd-navbar-nav-wrap"><span></span></button>
+                <!-- RD Navbar collapse toggle-->
+                <button class="rd-navbar-collapse-toggle" data-rd-navbar-toggle=".rd-navbar-collapse"><span></span></button>
+                <!-- RD Navbar Brand-->
+                <div class="rd-navbar-brand mobile-brand"><a class="brand-name" href="index.html"><img src="images/logo.png" alt="" width="314" height="48"/></a></div>
+              </div>
+              <div class="rd-navbar-aside-right">
+                <div class="rd-navbar-nav-wrap">
+                  <div class="rd-navbar-nav-scroll-holder">
+                    <ul class="rd-navbar-nav">
+                      <li><a href="index.html">Главная</a>
+                      </li>
+                      <li><a href="about-us.html">О нас</a>
+                      </li>
+                      <li><a href="contacts.html">Контакты</a>
+                      </li>
+                      <li class="active"><a href="calculator.html">Калькулятор</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </nav>
+        </div>
+      </header>
+      <style>
+        /* Стили для формы */
+        #calculatorForm {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          margin-top: 20px;
+        }
+      
+        /* Стили для полей и кнопки */
+        .form-group {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          margin-bottom: 10px;
+        }
+      
+        label {
+          margin-bottom: 5px;
+        }
+      
+        input[type="number"],
+        select {
+          width: 200px;
+          padding: 10px;
+          border: 1px solid #0DB14B;
+          border-radius: 4px;
+        }
+      
+        button[type="submit"] {
+          width: 200px;
+          padding: 10px;
+          background-color: #0DB14B;
+          color: white;
+          border: none;
+          border-radius: 4px;
+          cursor: pointer;
+        }
+      
+        button[type="submit"]:hover {
+          background-color: #0DB14B;
+        }
+      
+        #result {
+          margin-top: 10px;
+          font-weight: bold;
+        }
+      </style>
+       <!--Контакты-->
+        <section class="section section-md bg-white text-center">
+            <div class="shell">
+                <div class="range range-50 range-md-center">
+                    <div class="cell-sm-8">
+                        <div class="contact-box">
+                            <h3>Калькулятор</h3>
+                            <p style="color:black">Узнайте ежемесячный платеж для покупки товара в рассрочку. Просто введите сумму товара, выберите желаемый период рассрочки и нажмите кнопку "Рассчитать".</p>
+                            <form id="calculatorForm">
+                                <div class="form-group">
+                                  <label for="amount" style="color:black">Сумма товара:</label>
+                                  <input type="number" id="amount" name="amount" required style="color:black" placeholder="Введите сумму:">
+                                </div>
+                            
+                                <div class="form-group">
+                                    <label for="months" style="color:black">Выберите период:</label>
+                                    <div class="select-arrow">
+                                      <select id="months" name="months">
+                                        <option value="6">6 месяцев</option>
+                                        <option value="12">12 месяцев</option>
+                                      </select>
+                                      <span class="select-arrow"></span>
+                                    </div>
+                                  </div>
+                                  
+                                  
+                            
+                                <button type="submit">Рассчитать</button>
+                              </form>
+                            <div id="result" style="color:black"></div><br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+      
+    
+      
+      
+      <script>
+        const form = document.getElementById('calculatorForm');
+        const resultDiv = document.getElementById('result');
+      
+        form.addEventListener('submit', function(event) {
+          event.preventDefault();
+          
+          const amountInput = document.getElementById('amount');
+          const monthsSelect = document.getElementById('months');
+      
+          const amount = parseFloat(amountInput.value);
+          const months = parseInt(monthsSelect.value);
+      
+          if (months === 6) {
+            const amountWithInterest = amount * 1.20 * 1.26 / 6;
+            const installment = (amountWithInterest / 1).toFixed(2);
+            resultDiv.innerText = `6 месяцев: ${installment} сум.`;
+          } else if (months === 12) {
+            const amountWithInterest = amount * 1.20 * 1.44 / 12;
+            const installment = (amountWithInterest / 1).toFixed(2);
+            resultDiv.innerText = `12 месяцев: ${installment} сум.`;
+          }
+        });
+      </script>
+      
+      
+      
+
+      <!-- Page Footer-->
+      <footer class="page-footer text-left text-sm-left">
+        <div class="shell-wide"><br><br>
+          <div class="page-footer-minimal">
+            <div class="shell-wide">
+              <div class="range range-50">
+                <div class="cell-sm-6 cell-md-3 cell-lg-4 wow fadeInUp" data-wow-delay=".1s">
+                  <div class="page-footer-minimal-inner">
+                    <h4>Время работы</h4>
+                    <ul class="list-unstyled">
+                      <li>
+                        <div class="group-xs"> 
+                          <div>
+                            <dl class="list-desc">
+                              <dt>Вт - Пят: </dt>
+                              <dd class="text-gray-darker"><span style="color:black">8:00–20:00</span></dd>
+                            </dl>
+                          </div>
+                          <div>
+                            <dl class="list-desc">
+                              <dt>Суб - Вс: </dt>
+                              <dd class="text-gray-darker"><span style="color:black">9:00–18:00</span></dd>
+                            </dl>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <p class="rights" style="color:black"><span>&copy;&nbsp;</span><span>2023</span><span>&nbsp;</span><span class="copyright-year"></span>BUYURUB. Все права защищены. Developed by <a href="https://www.fayxanur.uz" style="color:black">FAYXANUR</a></p>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="cell-sm-6 cell-md-5 cell-lg-4 wow fadeInUp" data-wow-delay=".2s">
+                  <div class="page-footer-minimal-inner">
+                    <h4>Адрес</h4>
+                    <ul class="list-unstyled">
+                      <li>
+                        <dl class="list-desc">
+                          <dt><span class="icon icon-sm mdi mdi-map-marker"></span></dt>
+                          <dd><a class="link link-gray-darker" href="#" >Чилонзор 14/8, Ташкент, Узбекистан</a></dd>
+                        </dl>
+                      </li>
+                      <li>
+                        <dl class="list-desc">
+                          <dt><span class="icon icon-sm mdi mdi-phone"></span></dt>
+                          <dd class="text-gray-darker" style="color:black">Контакты: <a class="link link-gray-darker" href="tel:+998 (90) 046-30-70">+998 (90) 046-30-70</a>
+                          </dd>
+                        </dl>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="cell-sm-8 cell-md-4 wow fadeInUp" data-wow-delay=".3s">
+                  <div class="page-footer-minimal-inner-subscribe">
+                    <h4>Подписка</h4>
+                    <!-- RD Mailform-->
+                    <form class="rd-mailform rd-mailform-inline form-center" data-form-output="form-output-global" data-form-type="subscribe" method="post" action="bat/rd-mailform.php">
+                      <div class="form-wrap">
+                        <input class="form-input" id="subscribe-email" type="email" name="email" data-constraints="@Email @Required">
+                        <label class="form-label" for="subscribe-email">Email</label>
+                      </div>
+                      <button class="button button-primary-2 button-effect-ujarak button-square" type="submit"><span>Подписаться</span></button>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <!-- PANEL-->
+    <!-- END PANEL-->
+    <!-- Global Mailform Output-->
+    <div class="snackbars" id="form-output-global"></div>
+    <!-- PhotoSwipe Gallery-->
+    <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="pswp__bg"></div>
+      <div class="pswp__scroll-wrap">
+        <div class="pswp__container">
+          <div class="pswp__item"></div>
+          <div class="pswp__item"></div>
+          <div class="pswp__item"></div>
+        </div>
+        <div class="pswp__ui pswp__ui--hidden">
+          <div class="pswp__top-bar">
+            <div class="pswp__counter"></div>
+            <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+            <button class="pswp__button pswp__button--share" title="Share"></button>
+            <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+            <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+            <div class="pswp__preloader">
+              <div class="pswp__preloader__icn">
+                <div class="pswp__preloader__cut">
+                  <div class="pswp__preloader__donut"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+            <div class="pswp__share-tooltip"></div>
+          </div>
+          <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
+          <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
+          <div class="pswp__caption">
+            <div class="pswp__caption__cent"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Javascript-->
+    <script src="js/core.min.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>
