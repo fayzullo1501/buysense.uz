@@ -3,11 +3,18 @@
 <html class="wide wow-animation" lang="en">
   <head>
     <!-- Site Title-->
-    <title>Контакты - BUYSENSE</title>
-    <meta name="format-detection" content="telephone=no">
-    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
+    <title>Подпичики - BUYSENSE</title>
+    <meta content="BUYSENSE Мы - ведущая узбекская компания, специализирующаяся на предоставлении услуг посредничества между владельцами магазинов и клиентами в области рассрочки товаров." name="description">
+    <meta content="BUYSENSE - Ведущая узбекская компания в области рассрочки товаров." property="og:title">
+    <meta content="BUYSENSE Мы - ведущая узбекская компания, специализирующаяся на предоставлении услуг посредничества между владельцами магазинов и клиентами в области рассрочки товаров." property="og:description">
+    <meta content="images/og.jpg" property="og:image">
+    <meta content="BUYSENSE - Ведущая узбекская компания в области рассрочки товаров." property="twitter:title">
+    <meta content="BUYSENSE Мы - ведущая узбекская компания, специализирующаяся на предоставлении услуг посредничества между владельцами магазинов и клиентами в области рассрочки товаров." property="twitter:description">
+    <meta content="images/og.jpg" property="twitter:image">
+    <meta property="og:type" content="website">
+    <meta content="summary_large_image" name="twitter:card">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
     <link rel="icon" href="images/favicon.png" type="image/x-icon">
     <!-- Stylesheets-->
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lato:400,700,400italic%7CPoppins:300,400,500,700">
@@ -27,7 +34,7 @@
                     <ul style="font-size: 25px;" class="list-inline">
                       <li><a class="icon icon-sm icon-secondary-5 fa fa-instagram" href="#"></a></li>
                       <li><a class="icon icon-sm icon-secondary-5 fa fa-facebook" href="#"></a></li>
-                      <li><a class="icon icon-sm icon-secondary-5 fa fa-twitter" href="#"></a></li>
+                      <li><a class="icon icon-sm icon-secondary-5 fa fa-telegram" href="#"></a></li>
                     </ul>
                   </div>
                 </div>
@@ -66,9 +73,9 @@
                       </li>
                       <li><a href="about-us.html">О нас</a>
                       </li>
-                      <li class="active"><a href="contacts.html">Контакты</a>
+                      <li><a href="contacts.html">Контакты</a>
                       </li>
-                      <li><a href="calculator.html">Калькулятор</a>
+                      <li class="active"><a href="calculator.html">Калькулятор</a>
                       </li>
                     </ul>
                   </div>
@@ -78,111 +85,51 @@
           </nav>
         </div>
       </header>
-    <main>
-
-        <!-- Breadcrumbs & Page title-->
-        <section class="section-md text-center bg-image breadcrumbs-01">
-          <div class="shell shell-fluid">
-            <div class="range range-xs-center">
-              <div class="cell-xs-12 cell-xl-11">
-                <h2 class="text-white" style="color: white;">Контакты</h2>
-                <ul class="breadcrumbs-custom">
-                  <li><a href="index.html">Главная</a></li>
-                  <li class="active">Контакты</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <!--Контакты-->
+       <!--Контакты-->
         <section class="section section-md bg-white text-center">
-          <div class="shell">
-            <div class="range range-50 range-md-center">
-              <div class="cell-sm-8">
-                <div class="contact-box">
-                  <h3>Форма связи</h3>
-                  <p>Заполните форму ниже или воспользуйтесь указанными контактными данными, и наша команда свяжется с вами в ближайшее время. Мы благодарим вас за проявленный интерес к нашей компании и с нетерпением ждем возможности сотрудничества!</p>
-                  <form class="rd-mailform" data-form-output="form-output-global" data-form-type="contact" method="post" action="bat/rd-mailform.php">
-                    <div class="range range-sm-bottom spacing-20">
-                      <div class="cell-sm-6">
-                        <div class="form-wrap">
-                          <input class="form-input" id="contact-first-name" type="text" name="name" data-constraints="@Required">
-                          <label class="form-label" for="contact-first-name">Имя</label>
-                        </div>
-                      </div>
-                      <div class="cell-sm-6">
-                        <div class="form-wrap">
-                          <input class="form-input" id="contact-last-name" type="text" name="phone" data-constraints="@Numeric">
-                          <label class="form-label" for="contact-last-name">Телефон</label>
-                        </div>
-                      </div>
-                      <div class="cell-xs-12">
-                        <div class="form-wrap">
-                          <textarea class="form-input" id="contact-message" name="message" data-constraints="@Required"></textarea>
-                          <label class="form-label" for="contact-message">Сообщение</label>
-                        </div>
-                      </div>
-                      <div class="cell-sm-6">
-                        <div class="form-wrap">
-                          <input class="form-input" id="contact-email" type="email" name="email" data-constraints="@Email @Required">
-                          <label class="form-label" for="contact-email">E-mail</label>
-                        </div>
-                      </div>
-                      <div class="cell-sm-6">
-                        <button class="button button-primary button-square button-block button-effect-ujarak" type="submit"><span>Отправить</span></button>
-                      </div>
-                    </div>
-                  </form>
-                </div>
-              </div>
-              <div class="cell-sm-4">
-                <aside class="contact-box-aside text-left">
-                  <div class="range range-50">
-                    <div class="cell-xs-6 cell-sm-12">
-                      <p class="aside-title"> Мы в социальных сетях</p>
-                      <hr class="divider divider-left divider-custom">
-                      <ul class="list-inline">
-                        <li><a class="icon icon-sm icon-gray-3 fa fa-instagram" href="#"></a></li>
-                        <li><a class="icon icon-sm icon-gray-3 fa fa-facebook" href="#"></a></li>
-                        <li><a class="icon icon-sm icon-gray-3 fa fa-twitter" href="#"></a></li>
-                        <li><a class="icon icon-sm icon-gray-3 fa fa-youtube" href="#"></a></li>
-                      </ul>
-                    </div>
-                    <div class="cell-xs-6 cell-sm-12">
-                      <p class="aside-title"> Контакты</p>
-                      <hr class="divider divider-left divider-custom">
-                      <div class="unit unit-middle unit-horizontal unit-spacing-xs unit-xs-top">
-                        <div class="unit__left"><span class="text-middle icon icon-sm mdi mdi-phone icon-primary"></span></div>
-                        <div class="unit__body"><a class="text-middle link link-gray-dark" href="tel:+998 (90) 046-30-70">+998 (90) 046-30-70</a></div>
-                      </div>
-                    </div>
-                    <div class="cell-xs-6 cell-sm-12">
-                      <p class="aside-title"> Адрес</p>
-                      <hr class="divider divider-left divider-custom">
-                      <div class="unit unit-middle unit-horizontal unit-spacing-xs unit-xs-top">
-                        <div class="unit__left"><span class="text-middle icon icon-sm mdi mdi-map-marker icon-primary"></span></div>
-                        <div class="unit__body"><a class="text-middle link link-gray-dark">Чилонзор 14/8, Ташкент, Узбекистан</a></div>
-                      </div>
-                    </div>
-                    <div class="cell-xs-6 cell-sm-12">
-                      <p class="aside-title"> Время работы</p>
-                      <hr class="divider divider-left divider-custom">
-                      <div class="unit unit-middle unit-horizontal unit-spacing-xs unit-xs-top">
-                        <div class="unit__left"><span class="text-middle icon icon-sm mdi mdi-clock icon-primary"></span></div>
-                        <div class="unit__body text-gray-darker">
-                          <p style="color:black">Мы работаем каждый день кроме Понидельника от 08:00 до 20:00</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </aside>
-              </div>
-            </div>
-          </div>
-        </section>
+            <div class="shell">
+                <div class="range range-50 range-md-center">
+                    <div class="cell-sm-8">
+                    <h2>Список подписчиков:</h2>
+<?php include("../follow/subscriptions.php"); ?>
 
-        <!-- Page Footer-->
+                    </div>
+                </div>
+            </div>
+        </section>
+      
+    
+      
+      
+      <script>
+        const form = document.getElementById('calculatorForm');
+        const resultDiv = document.getElementById('result');
+      
+        form.addEventListener('submit', function(event) {
+          event.preventDefault();
+          
+          const amountInput = document.getElementById('amount');
+          const monthsSelect = document.getElementById('months');
+      
+          const amount = parseFloat(amountInput.value);
+          const months = parseInt(monthsSelect.value);
+      
+          if (months === 6) {
+            const amountWithInterest = amount * 1.20 * 1.26 / 6;
+            const installment = (amountWithInterest / 1).toFixed(2);
+            resultDiv.innerText = `6 месяцев: ${installment} сум.`;
+          } else if (months === 12) {
+            const amountWithInterest = amount * 1.20 * 1.44 / 12;
+            const installment = (amountWithInterest / 1).toFixed(2);
+            resultDiv.innerText = `12 месяцев: ${installment} сум.`;
+          }
+        });
+      </script>
+      
+      
+      
+
+      <!-- Page Footer-->
       <footer class="page-footer text-left text-sm-left">
         <div class="shell-wide"><br><br>
           <div class="page-footer-minimal">
@@ -221,7 +168,7 @@
                       <li>
                         <dl class="list-desc">
                           <dt><span class="icon icon-sm mdi mdi-map-marker"></span></dt>
-                          <dd><a class="link link-gray-darker" href="Чилонзор 14/8, Ташкент, Узбекистан" >Чилонзор 14/8, Ташкент, Узбекистан</a></dd>
+                          <dd><a class="link link-gray-darker" href="#" >Чилонзор 14/8, Ташкент, Узбекистан</a></dd>
                         </dl>
                       </li>
                       <li>
@@ -238,10 +185,10 @@
                   <div class="page-footer-minimal-inner-subscribe">
                     <h4>Подписка</h4>
                     <!-- RD Mailform-->
-                    <form class="rd-mailform rd-mailform-inline form-center" method="post" action="./follow/follow.php">
+                    <form class="rd-mailform rd-mailform-inline form-center" data-form-output="form-output-global" data-form-type="subscribe" method="post" action="bat/rd-mailform.php">
                       <div class="form-wrap">
-                        <input class="form-input" id="subscribe-email" type="email" name="email" placeholder="Введите ваш email" required>
-                        <label class="form-label" for="subscribe-email"></label>
+                        <input class="form-input" id="subscribe-email" type="email" name="email" data-constraints="@Email @Required">
+                        <label class="form-label" for="subscribe-email">Email</label>
                       </div>
                       <button class="button button-primary-2 button-effect-ujarak button-square" type="submit"><span>Подписаться</span></button>
                     </form>
@@ -252,7 +199,6 @@
           </div>
         </div>
       </footer>
-      </main>
     </div>
     <!-- PANEL-->
     <!-- END PANEL-->
