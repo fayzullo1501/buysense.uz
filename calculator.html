@@ -173,29 +173,49 @@
       
       
       <script>
-        const form = document.getElementById('calculatorForm');
-        const resultDiv = document.getElementById('result');
-      
-        form.addEventListener('submit', function(event) {
-          event.preventDefault();
-          
-          const amountInput = document.getElementById('amount');
-          const monthsSelect = document.getElementById('months');
-      
-          const amount = parseFloat(amountInput.value);
-          const months = parseInt(monthsSelect.value);
-      
-          if (months === 6) {
-            const amountWithInterest = amount * 1.20 * 1.26 / 6;
-            const installment = (amountWithInterest / 1).toFixed(2);
-            resultDiv.innerText = `6 месяцев: ${installment} сум.`;
-          } else if (months === 12) {
-            const amountWithInterest = amount * 1.20 * 1.44 / 12;
-            const installment = (amountWithInterest / 1).toFixed(2);
-            resultDiv.innerText = `12 месяцев: ${installment} сум.`;
-          }
-        });
-      </script>
+  const form = document.getElementById('calculatorForm');
+  const resultDiv = document.getElementById('result');
+
+  form.addEventListener('submit', function (event) {
+    event.preventDefault();
+
+    const amountInput = document.getElementById('amount');
+    const monthsSelect = document.getElementById('months');
+
+    const amount = parseFloat(amountInput.value);
+    const months = parseInt(monthsSelect.value);
+
+    let interestRate = 0.44;
+
+    if (months === 6) {
+      if (amount <= 3000000) {
+        interestRate = 0.44;
+      } else if (amount <= 6000000) {
+        interestRate = 0.44;
+      } else {
+        interestRate = 0.44;
+      }
+    } else if (months === 12) {
+      if (amount <= 3000000) {
+        interestRate = 0.44;
+      } else if (amount <= 6000000) {
+        interestRate = 0.44;
+      } else {
+        interestRate = 0.44;
+      }
+    }
+
+    const amountWithInterest = (amount + amount * interestRate) / months;
+    const installment = amountWithInterest.toFixed(2);
+
+    if (months === 6) {
+      resultDiv.innerText = `6 месяцев: ${installment} сум.`;
+    } else if (months === 12) {
+      resultDiv.innerText = `12 месяцев: ${installment} сум.`;
+    }
+  });
+</script>
+
       
       
       
