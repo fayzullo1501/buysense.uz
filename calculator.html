@@ -181,19 +181,27 @@
   }
 
   function calculateInvestment(amount, months) {
-    let interestRate;
-    if (amount <= 3000000) {
-      interestRate = 0.2;
-    } else if (amount <= 6000000) {
-      interestRate = 0.15;
-    } else {
-      interestRate = 0.1;
+    let result;
+
+    if (months === 6) {
+      if (amount <= 3000000) {
+        result = (amount + (amount * 0.2)) * (1 + 0.26) / 6;
+      } else if (amount <= 8000000) {
+        result = (amount + (amount * 0.15)) * (1 + 0.26) / 6;
+      } else {
+        result = (amount + (amount * 0.1)) * (1 + 0.26) / 6;
+      }
+    } else if (months === 12) {
+      if (amount <= 3000000) {
+        result = (amount + (amount * 0.2)) * (1 + 0.44) / 12;
+      } else if (amount <= 8000000) {
+        result = (amount + (amount * 0.15)) * (1 + 0.44) / 12;
+      } else {
+        result = (amount + (amount * 0.1)) * (1 + 0.44) / 12;
+      }
     }
 
-    const totalAmount = (amount + amount * interestRate) * 1.44;
-    const installment = (totalAmount / months).toFixed(2);
-
-    return formatCurrency(installment);
+    return formatCurrency(result);
   }
 
   form.addEventListener('submit', function (event) {
