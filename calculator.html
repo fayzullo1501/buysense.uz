@@ -141,28 +141,31 @@
                         <div class="contact-box">
                             <h3>Калькулятор</h3>
                             <p style="color:black">Узнайте ежемесячный платеж для покупки товара в рассрочку. Просто введите сумму товара, выберите желаемый период рассрочки и нажмите кнопку "Рассчитать".</p>
-                            <form id="calculatorForm">
-                                <div class="form-group">
-                                  <label for="amount" style="color:black">Сумма товара:</label>
-                                  <input type="number" id="amount" name="amount" required style="color:black" placeholder="Введите сумму:">
-                                </div>
+                            <form id="partnerCalculatorForm">
+                              <div class="form-group">
+                                <label for="partner" style="color:black">Выберите партнёра:</label>
+                                <select id="partner" required>
+                                  <option value="">-- Выберите --</option>
+                                  <option value="UZUM Nasiya">UZUM Nasiya</option>
+                                  <option value="InTend">InTend</option>
+                                  <option value="alif nasiya">alif nasiya</option>
+                                  <option value="IMAN pay">IMAN pay</option>
+                                  <option value="SOLFY">SOLFY</option>
+                                  <option value="OPEN">OPEN</option>
+                                  <option value="BUYSENSE Nasiya">BUYSENSE Nasiya</option>
+                                  <option value="StarPower">StarPower</option>
+                                </select>
+                              </div>
                             
-                                <div class="form-group">
-                                    <label for="months" style="color:black">Выберите период:</label>
-                                    <div style="border: 1px solid #552FE8; border-radius: 4px;" class="select-arrow">
-                                      <select id="months" name="months">
-                                        <option value="6">6 месяцев</option>
-                                        <option value="12">12 месяцев</option>
-                                      </select>
-                                      <span class="select-arrow"></span>
-                                    </div>
-                                  </div>
-                                  
-                                  
+                              <div class="form-group">
+                                <label for="amount" style="color:black">Сумма товара:</label>
+                                <input type="number" id="amount" name="amount" required style="color:black" placeholder="Введите сумму:">
+                              </div>
                             
-                                <button type="submit" style="margin-top: 10px;">Рассчитать</button>
-                              </form>
-                            <div id="result" style="color:black"></div><br>
+                              <button type="submit" style="margin-top: 10px;">Рассчитать</button>
+                            </form>
+                            
+                            <div id="partnerResult" style="color:black; margin-top: 15px;"></div>
                         </div>
                     </div>
                 </div>
@@ -173,55 +176,78 @@
       
       
       <script>
-  const form = document.getElementById('calculatorForm');
-  const resultDiv = document.getElementById('result');
+const partners = {
+  "UZUM Nasiya": { periods: { "3 oy": 11, "6 oy": 29, "12 oy": 44 } },
+  "InTend": { periods: { "3 oy": 10, "6 oy": 20, "12 oy": 30 } },
+  "alif nasiya": { periods: { "1 oy": 27, "3 oy": 37, "6 oy": 26, "9 oy": 44, "12 oy": 50, "15 oy": 62, "18 oy": 68, "24 oy": 87 } },
+  "IMAN pay": { periods: { "3 oy": 31, "6 oy": 41, "9 oy": 51, "12 oy": 58 } },
+  "SOLFY": { periods: { "3 oy": 8 } },
+  "OPEN": { periods: { "12 oy": 32 } },
+  "BUYSENSE Nasiya": { periods: { "3 oy": 30, "6 oy": 48, "9 oy": 62, "12 oy": 77 } },
+  "StarPower": { periods: { "3 oy": 25, "6 oy": 42, "9 oy": 57, "12 oy": 72 }, requiresDownPayment: true }
+};
 
-  function formatCurrency(amount) {
-    return amount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
+function calculateMargin(amount) {
+  if (amount <= 3000000) return amount * 0.21;
+  else if (amount <= 8000000) return amount * 0.16;
+  else return amount * 0.11;
+}
+
+function formatCurrency(amount) {
+  return amount.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
+}
+
+function calculateInstallment(amount, margin, months) {
+  const buysenseMargin = calculateMargin(amount);
+  const totalWithBuysense = amount + buysenseMargin;
+  const totalMargin = totalWithBuysense * (margin / 100);
+  const total = totalWithBuysense + totalMargin;
+  return formatCurrency(total / months);
+}
+
+function calculateWithDownPayment(amount, margin, months) {
+  const totalWithMargin = amount * (1 + margin / 100);
+  const down = totalWithMargin * 0.25;
+  const rest = totalWithMargin - down;
+  return {
+    total: formatCurrency(totalWithMargin),
+    down: formatCurrency(down),
+    perMonth: formatCurrency(rest / months)
+  };
+}
+
+document.getElementById("partnerCalculatorForm").addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  const partner = document.getElementById("partner").value;
+  const amount = parseFloat(document.getElementById("amount").value);
+  const resultDiv = document.getElementById("partnerResult");
+
+  if (!partner || isNaN(amount) || amount <= 0) {
+    resultDiv.innerText = "Пожалуйста, введите корректные данные.";
+    return;
   }
 
-  function calculateInvestment(amount, months) {
-    let result;
+  const data = partners[partner];
+  let output = `<strong>${partner}</strong><br/>`;
 
-    if (months === 6) {
-      if (amount <= 3000000) {
-        result = (amount + (amount * 0.2)) * (1 + 0.26) / 6;
-      } else if (amount <= 8000000) {
-        result = (amount + (amount * 0.15)) * (1 + 0.26) / 6;
-      } else {
-        result = (amount + (amount * 0.1)) * (1 + 0.26) / 6;
-      }
-    } else if (months === 12) {
-      if (amount <= 3000000) {
-        result = (amount + (amount * 0.2)) * (1 + 0.44) / 12;
-      } else if (amount <= 8000000) {
-        result = (amount + (amount * 0.15)) * (1 + 0.44) / 12;
-      } else {
-        result = (amount + (amount * 0.1)) * (1 + 0.44) / 12;
-      }
+  for (let period in data.periods) {
+    const months = parseInt(period);
+    const margin = data.periods[period];
+
+    if (data.requiresDownPayment) {
+      const res = calculateWithDownPayment(amount, margin, months);
+      output += `${period}: Общая сумма: ${res.total} сум, Первоначальный взнос: ${res.down} сум, Ежемесячно: ${res.perMonth} сум<br/>`;
+    } else {
+      const perMonth = calculateInstallment(amount, margin, months);
+      output += `${period}: ${perMonth} сум в месяц<br/>`;
     }
-
-    return formatCurrency(result);
   }
 
-  form.addEventListener('submit', function (event) {
-    event.preventDefault();
-
-    const amountInput = document.getElementById('amount');
-    const monthsSelect = document.getElementById('months');
-
-    const amount = parseFloat(amountInput.value);
-    const months = parseInt(monthsSelect.value);
-
-    const result = calculateInvestment(amount, months);
-
-    if (months === 6) {
-      resultDiv.innerText = `6 месяцев: ${result} сум.`;
-    } else if (months === 12) {
-      resultDiv.innerText = `12 месяцев: ${result} сум.`;
-    }
-  });
+  resultDiv.innerHTML = output;
+});
 </script>
+
 
 
       
